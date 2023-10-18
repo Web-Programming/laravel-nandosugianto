@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\prodiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -63,7 +64,8 @@ Route::get('/fakultas', function () {
     //return view('fakultas.index', ["fakultas" => ["Fakultas Ilmu Komputer dan Rekayasa" , "Fakultas Ekonomi dan Bisnis"]]);
     //return view('fakultas.index')->with("Fakultas" ,[" Fakultas Ilmu Komputer dan Rekayasa" , "Fakultas Ekonomi dan Bisnis"]);
     //$Fakultas = ("Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ekonomi dan Bisnis");
-    $fakultas = ("Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ekonomi dan Bisnis");
+    $fakultas = ["Fakultas Ilmu Komputer dan Rekayasa", "Fakultas Ekonomi dan Bisnis"];
     return view ('fakultas.index', compact('fakultas'));
 
 });
+Route::get('/prodi', [prodiController::class,'index']);
