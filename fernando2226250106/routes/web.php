@@ -14,9 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/prodi/all-join-facade', function () {
     return view('welcome');
 });
+
 
 // buat route ke halaman profil
 Route::get("/profil", function () {
