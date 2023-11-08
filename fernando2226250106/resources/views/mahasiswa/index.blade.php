@@ -2,7 +2,7 @@
 @section('title','Halaman prodi')
 
 @section('content')
-<h2>Prodi</h2>
+<h2>Mahasiswa</h2>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -10,9 +10,9 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($allmahasiswaprodi as $item)
+        @foreach ($allmahasiswa as $item)
         <tr>
-            <td> [[$item->npm]] </td><td> [[$item->nama_mahasiswa]] </td><td> [[$item->nama_prodi ]]
+            <td> [[$item->npm]] </td><td> [[$item->nama_mahasiswa]] </td><td> [[$item->prodi_nama ]]
             </td>
         </tr>
         @endforeach

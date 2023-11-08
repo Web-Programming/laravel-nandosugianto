@@ -18,6 +18,12 @@ Route::get('/prodi/all-join-facade', function () {
     return view('welcome');
 });
 
+Route::get('/prodi/all-join-facade', [ProdiController::class, 'allJoinFacade']);
+
+Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
+
+Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']);
+
 
 // buat route ke halaman profil
 Route::get("/profil", function () {

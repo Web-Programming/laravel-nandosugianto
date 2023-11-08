@@ -1,3 +1,4 @@
+<?php
 namespace app\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -14,4 +15,8 @@ class Mahasiswa extends Model{
 
     //untuk mengatur kolom yg tidak boleh diisi
     protected $guard =[];
+
+    public function prodi() {
+        return $this->belongsTo('App\Models\Prodi');
+    }
 }

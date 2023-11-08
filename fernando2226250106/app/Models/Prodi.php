@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prodi extends Model
 {
-    use HasFactory;
+    public function mahasiswas()
+    {
+        return $this->hasMany('App\Models\Mahasiswa');
+    }
 }

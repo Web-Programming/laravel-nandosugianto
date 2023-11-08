@@ -53,3 +53,10 @@ public function selectElq(){
     dump($result);
 }
 
+public function alljoinElq()
+{
+    $kampus= "Universitas Multi Data Palembang";
+    $mahasiswa = Mahasiswa::has('prodi')->get();
+    return view ('mahasiswa.index' , ['allmahasiswa' => $mahasiswa, 'kampus'=>$kampus]);
+}
+
