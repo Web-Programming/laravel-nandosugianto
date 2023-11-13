@@ -24,6 +24,10 @@ Route::get('/prodi/all-join-elq', [ProdiController::class, 'allJoinElq']);
 
 Route::get('/mahasiswa/all-join-elq', [MahasiswaController::class, 'allJoinElq']);
 
+Route::get('/ptodi/create' , [prodiController::class, 'create']);
+
+Route::post('prodi/store', [prodiController::class, 'store']);
+
 
 // buat route ke halaman profil
 Route::get("/profil", function () {
@@ -44,6 +48,13 @@ Route::get("/Mahasiswa/(nama)", function ($nama = "Nando") {
 Route::get("/profil/{nama?}/ {pekerjaan?}", function ($nama = "Nando", $pekerjaan = "Mahasiswa") {
     echo "<h1>Helo Nama Saya $nama. Saya adalah $pekerjaan</h2>";
 });
+
+Route::get('/prodi', [ProdiController::class,
+'index'])->name('prodi.index');
+
+Route::get('/prodi/{id}', [ProdiController::class,
+'show'])->name('prodi.show');
+
 
 // redirect
 Route::get("/hubungi", function () {

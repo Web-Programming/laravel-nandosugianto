@@ -17,6 +17,32 @@ class prodiController extends Controller{
         return view('prodi.index',['allmahasiswaprodi' => $result, 'kampus' => $kampus]);
     }
 
+    public function index () {
+        $prodis = Prodi::all();
+        return view ('prodi.index')->with('prodis' ,$prodis);
+    }
+    public function create() {
+        return view('prodi.create');
+    }
+    public function store(Request $request)
+    {
+        $validataData = $request->validate({
+            'nama' => 'required|min:5|max:20',
+        });
+        dump(
+            //dump($validataData);
+            //echo $validateData['nama'];
+            $prodi = new Prodi();
+            $prodi->nama = $validateData['nama'];
+            property nama prodi ($prodi->nama)
+            $prodi->save();
+
+            //return 'data prodi $prodi->nama berhasil disimpan ke database";
+            $request->session()->flash('info', "Data prodi $prodi->nama berhasil disimpan ke database");
+            return redirect()->route('prodi.create');
+        )
+    }
+
     public function alljoinElq()
     {
         $prodis = Prodi::with('mahasiswas')->get();
